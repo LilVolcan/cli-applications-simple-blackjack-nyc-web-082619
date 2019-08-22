@@ -52,8 +52,8 @@ end
 def runner
   welcome #welcome player 
   card_total = initial_round #deals two cards and returns/puts card total i.e. 17
-  until card_total > 21 
-    hit?(card_total)
+  while card_total < 21
+    card_total = hit?(card_total)
     display_card_total(card_total)
   end 
   end_game(card_total)
